@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/bursaerp/static/css/main.5c326fa7.chunk.css",
-    "main.js": "/bursaerp/static/js/main.a49f3f43.chunk.js",
-    "main.js.map": "/bursaerp/static/js/main.a49f3f43.chunk.js.map",
+    "main.css": "/bursaerp/static/css/main.f9505cf2.chunk.css",
+    "main.js": "/bursaerp/static/js/main.d2f0d0f4.chunk.js",
+    "main.js.map": "/bursaerp/static/js/main.d2f0d0f4.chunk.js.map",
     "runtime-main.js": "/bursaerp/static/js/runtime-main.4c8ad5eb.js",
     "runtime-main.js.map": "/bursaerp/static/js/runtime-main.4c8ad5eb.js.map",
-    "static/js/2.2aab7d95.chunk.js": "/bursaerp/static/js/2.2aab7d95.chunk.js",
-    "static/js/2.2aab7d95.chunk.js.map": "/bursaerp/static/js/2.2aab7d95.chunk.js.map",
+    "static/js/2.c9d6bbbe.chunk.js": "/bursaerp/static/js/2.c9d6bbbe.chunk.js",
+    "static/js/2.c9d6bbbe.chunk.js.map": "/bursaerp/static/js/2.c9d6bbbe.chunk.js.map",
     "index.html": "/bursaerp/index.html",
-    "static/css/main.5c326fa7.chunk.css.map": "/bursaerp/static/css/main.5c326fa7.chunk.css.map",
-    "static/js/2.2aab7d95.chunk.js.LICENSE.txt": "/bursaerp/static/js/2.2aab7d95.chunk.js.LICENSE.txt",
+    "static/css/main.f9505cf2.chunk.css.map": "/bursaerp/static/css/main.f9505cf2.chunk.css.map",
+    "static/js/2.c9d6bbbe.chunk.js.LICENSE.txt": "/bursaerp/static/js/2.c9d6bbbe.chunk.js.LICENSE.txt",
     "static/media/abeam-logo.181f10a5.png": "/bursaerp/static/media/abeam-logo.181f10a5.png",
     "static/media/bursa-logo.670c8cdb.png": "/bursaerp/static/media/bursa-logo.670c8cdb.png"
   },
   "entrypoints": [
     "static/js/runtime-main.4c8ad5eb.js",
-    "static/js/2.2aab7d95.chunk.js",
-    "static/css/main.5c326fa7.chunk.css",
-    "static/js/main.a49f3f43.chunk.js"
+    "static/js/2.c9d6bbbe.chunk.js",
+    "static/css/main.f9505cf2.chunk.css",
+    "static/js/main.d2f0d0f4.chunk.js"
   ]
 }

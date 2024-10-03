@@ -1,5 +1,6 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import ProcessCard from './ProcessCard';
+import ToolCard from './ToolCard';
 import KeyImprovements from './KeyImprovements';
 import CategoryNavigation from './CategoryNavigation';
 import { Grid } from '@material-ui/core';
@@ -46,31 +47,59 @@ function ProcessGrid({ processes, onSelectProcess }) {
     ]
   };
 
-  // Calculate the maximum pain point count across all categories
-  const maxPainPoints = useMemo(() => {
-    return Object.values(processes).flat().reduce((max, process) => 
-      Math.max(max, process.painPoints.length), 0
-    );
-  }, [processes]);
+  const toolCards = [
+    {
+      id: 'enable-now',
+      title: 'SAP Enable Now',
+      description: 'Accelerate user adoption and streamline change management across all processes.',
+      benefits: [
+        'Faster user adoption and reduced training time',
+        'Customized learning content for specific roles and processes',
+        'Improved user productivity and reduced errors',
+        'Efficient knowledge transfer and documentation',
+      ],
+      icon: '🚀',
+      category: 'Enablement',
+    },
+    {
+      id: 'analytics-cloud',
+      title: 'SAP Analytics Cloud',
+      description: 'Empower decision-making with advanced analytics and visualizations for all processes.',
+      benefits: [
+        'Native integration with SAP and non-SAP data sources',
+        'Real-time insights and predictive analytics',
+        'Self-service BI and data discovery',
+        'Advanced forecasting and scenario planning',
+      ],
+      icon: '📊',
+      category: 'Analytics',
+    }
+  ];
 
   return (
     <div className="process-grid">
       <CategoryNavigation
-        categories={Object.keys(processes)}
+        categories={[...Object.keys(processes), 'Enablement Tools']}
         activeCategory={activeCategory}
         onCategoryChange={setActiveCategory}
       />
-      <KeyImprovements category={activeCategory} improvements={keyImprovements[activeCategory]} />
+      {activeCategory !== 'Enablement Tools' && (
+        <KeyImprovements category={activeCategory} improvements={keyImprovements[activeCategory]} />
+      )}
       <Grid container spacing={3} className={classes.gridContainer}>
-        {processes[activeCategory].map((process, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index} className={classes.gridItem}>
-            <ProcessCard 
-              process={process} 
-              onSelect={onSelectProcess} 
-              maxPainPoints={maxPainPoints}
-            />
-          </Grid>
-        ))}
+        {activeCategory === 'Enablement Tools' ? (
+          toolCards.map((tool, index) => (
+            <Grid item xs={12} sm={6} md={4} key={index} className={classes.gridItem}>
+              <ToolCard tool={tool} />
+            </Grid>
+          ))
+        ) : (
+          processes[activeCategory].map((process, index) => (
+            <Grid item xs={12} sm={6} md={4} key={index} className={classes.gridItem}>
+              <ProcessCard process={process} onSelect={onSelectProcess} />
+            </Grid>
+          ))
+        )}
       </Grid>
     </div>
   );
