@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Header from './components/Header';
 import SearchBar from './components/SearchBar';
 import ProcessCard from './components/ProcessCard';
@@ -11,22 +11,21 @@ import { salesProcesses } from './data/salesProcesses';
 import { motion, AnimatePresence } from 'framer-motion';
 
 function App() {
-  // Use useMemo to memoize allProcesses
-  const allProcesses = useMemo(() => ({
-    ...financeProcesses,
-    ...procurementProcesses,
-    ...salesProcesses
-  }), []);
-
+  const allProcesses = { ...financeProcesses, ...procurementProcesses, ...salesProcesses };
   const [selectedGroup, setSelectedGroup] = useState(null);
   const [selectedSubProcess, setSelectedSubProcess] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredProcesses, setFilteredProcesses] = useState(allProcesses);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  useEffect(() => {}, []); // Empty hook, not necessary anymore for auth
-
   useEffect(() => {
+    const storedAuth = localStorage.getItem('isAuthenticated');
+    if (storedAuth) {
+      setIsAuthenticated(JSON.parse(storedAuth));
+    }
+  }, []);
+
+  const filterProcesses = useCallback(() => {
     if (searchTerm) {
       const filtered = Object.keys(allProcesses).reduce((acc, group) => {
         const matchingProcesses = allProcesses[group].filter(
@@ -43,6 +42,10 @@ function App() {
       setFilteredProcesses(allProcesses);
     }
   }, [searchTerm, allProcesses]);
+
+  useEffect(() => {
+    filterProcesses();
+  }, [filterProcesses]);
 
   const openSubCards = (group) => {
     setSelectedGroup(group);
