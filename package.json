@@ -1,0 +1,9 @@
+"homepage": "https://ib823/bursaerp",
+"scripts": {
+  // other scripts...
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
+  }
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build"
+}
