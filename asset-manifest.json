@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/bursaerp/static/css/main.a5be1a78.chunk.css",
-    "main.js": "/bursaerp/static/js/main.91b63f95.chunk.js",
-    "main.js.map": "/bursaerp/static/js/main.91b63f95.chunk.js.map",
+    "main.js": "/bursaerp/static/js/main.b2555c1e.chunk.js",
+    "main.js.map": "/bursaerp/static/js/main.b2555c1e.chunk.js.map",
     "runtime-main.js": "/bursaerp/static/js/runtime-main.4c8ad5eb.js",
     "runtime-main.js.map": "/bursaerp/static/js/runtime-main.4c8ad5eb.js.map",
     "static/js/2.ee1c658d.chunk.js": "/bursaerp/static/js/2.ee1c658d.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.4c8ad5eb.js",
     "static/js/2.ee1c658d.chunk.js",
     "static/css/main.a5be1a78.chunk.css",
-    "static/js/main.91b63f95.chunk.js"
+    "static/js/main.b2555c1e.chunk.js"
   ]
 }
