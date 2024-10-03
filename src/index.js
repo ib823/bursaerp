@@ -1,11 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './styles/index.css';
-import App from './App';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+function App() {
+  return (
+    <div className="app-container">
+      <h1>BURSA Malaysia ERP Transformation</h1>
+      <p>If you can see this, React is working!</p>
+    </div>
+  );
+}
+
+export default App;
