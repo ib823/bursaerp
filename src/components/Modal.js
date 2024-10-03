@@ -22,7 +22,7 @@ function Modal({ process, onClose }) {
         </ul>
         {process.painPoints.length > 0 && (
           <>
-            <h3>Pain Points Addressed:</h3>
+            <h3>Potential Pain Points Addressed:</h3>
             <ul>
               {process.painPoints.map((painPoint, index) => (
                 <li key={index}>{painPoint.description}</li>
