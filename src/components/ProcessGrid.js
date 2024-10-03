@@ -106,3 +106,4 @@ function ProcessGrid({ processes, onSelectProcess }) {
 }
 
 export default ProcessGrid;
+

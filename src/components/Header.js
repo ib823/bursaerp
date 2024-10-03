@@ -66,8 +66,8 @@ function Header({ darkMode, setDarkMode }) {
           </Typography>
         )}
         <div className={classes.logoContainer}>
-          <img src={abeamLogo} alt="ABeam Logo" className={classes.logo} />
           <img src={bursaLogo} alt="Bursa Logo" className={classes.logo} />
+          <img src={abeamLogo} alt="ABeam Logo" className={classes.logo} />
         </div>
         <div className={classes.actions}>
           <IconButton color="inherit" onClick={() => setDarkMode(!darkMode)}>

@@ -26,8 +26,8 @@ const PassKeyPrompt = ({ onPassKeySubmit }) => {
         transition={{ delay: 0.2 }}
       >
         <div className="logo-container">
-          <img src={abeamLogo} alt="ABeam Logo" className="logo-image-left" />
           <img src={bursaLogo} alt="Bursa Logo" className="logo-image-right" />
+          <img src={abeamLogo} alt="ABeam Logo" className="logo-image-left" />
         </div>
         <h2>Confidential</h2>
         <p>
