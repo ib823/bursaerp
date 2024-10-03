@@ -51,7 +51,7 @@ function App() {
   }, [allProcesses, searchTerm]);
 
   const handlePassKeySubmit = (passKey) => {
-    if (passKey === 'ABeamBursa2024') {
+    if (passKey === 'AB24') {
       setIsAuthenticated(true);
       localStorage.setItem('isAuthenticated', JSON.stringify(true));
     } else {
