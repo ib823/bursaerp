@@ -29,9 +29,9 @@ const PassKeyPrompt = ({ onPassKeySubmit }) => {
           <img src={bursaLogo} alt="Bursa Logo" className="logo-image-left" />
           <img src={abeamLogo} alt="ABeam Logo" className="logo-image-right" />
         </div>
-        <h2>Confidential Presentation</h2>
+        <h2>Confidential</h2>
         <p>
-          This presentation is confidential and the sole property of ABeam Malaysia for Bursa Malaysia.<br />
+          This presentation is confidential and the sole property of ABeam Malaysia.<br />
           Access is restricted and requires a valid Pass Key.<br />
           For inquiries, contact edmund@abeam.com.
         </p>
