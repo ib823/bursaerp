@@ -2,18 +2,18 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
-  padding-top: 80px; /* Adjust based on header height */
+  padding-top: 120px; /* Increased to account for the larger mobile header */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-main {
-  flex-grow: 1;
+@media (max-width: 600px) {
+  .app-container {
+    padding-top: 140px; /* Further increased for mobile */
+  }
 }
 
-@media (max-width: 768px) {
-  .app-container {
-    padding: 0 0.5rem;
-  }
+main {
+  flex-grow: 1;
 }

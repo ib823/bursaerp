@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { useState, useMemo } from 'react';
 import ProcessCard from './ProcessCard';
 import KeyImprovements from './KeyImprovements';
+import CategoryNavigation from './CategoryNavigation';
+import { Grid } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 import '../styles/ProcessGrid.css';
 
+const useStyles = makeStyles((theme) => ({
+  gridContainer: {
+    marginTop: theme.spacing(3),
+  },
+  gridItem: {
+    display: 'flex',
+  },
+}));
+
 function ProcessGrid({ processes, onSelectProcess }) {
+  const [activeCategory, setActiveCategory] = useState(Object.keys(processes)[0]);
+  const classes = useStyles();
+
   const keyImprovements = {
     Finance: [
       "Simplified Data Models with Universal Journal",
@@ -31,19 +46,32 @@ function ProcessGrid({ processes, onSelectProcess }) {
     ]
   };
 
+  // Calculate the maximum pain point count across all categories
+  const maxPainPoints = useMemo(() => {
+    return Object.values(processes).flat().reduce((max, process) => 
+      Math.max(max, process.painPoints.length), 0
+    );
+  }, [processes]);
+
   return (
     <div className="process-grid">
-      {Object.entries(processes).map(([category, categoryProcesses]) => (
-        <div key={category} className="process-category">
-          <h2>{category}</h2>
-          <KeyImprovements category={category} improvements={keyImprovements[category]} />
-          <div className="process-list">
-            {categoryProcesses.map((process, index) => (
-              <ProcessCard key={index} process={process} onSelect={onSelectProcess} />
-            ))}
-          </div>
-        </div>
-      ))}
+      <CategoryNavigation
+        categories={Object.keys(processes)}
+        activeCategory={activeCategory}
+        onCategoryChange={setActiveCategory}
+      />
+      <KeyImprovements category={activeCategory} improvements={keyImprovements[activeCategory]} />
+      <Grid container spacing={3} className={classes.gridContainer}>
+        {processes[activeCategory].map((process, index) => (
+          <Grid item xs={12} sm={6} md={4} key={index} className={classes.gridItem}>
+            <ProcessCard 
+              process={process} 
+              onSelect={onSelectProcess} 
+              maxPainPoints={maxPainPoints}
+            />
+          </Grid>
+        ))}
+      </Grid>
     </div>
   );
 }
