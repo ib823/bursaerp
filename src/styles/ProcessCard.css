@@ -8,6 +8,13 @@
   overflow: hidden;
 }
 
+.no-issues {
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 10px;
+  text-align: left; /* Ensure the text aligns properly */
+}
+
 .process-icon {
   font-size: 2.5rem;
   color: var(--primary-color);
@@ -26,17 +33,22 @@
   margin-bottom: 1rem;
 }
 
-.pain-points-indicator {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  color: white;
-  border-radius: 20px;
-  padding: 0.25rem 0.75rem;
+.pain-point-indicator {
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
   font-size: 0.8rem;
-  font-weight: 500;
+  font-weight: bold;
+  width: 100px; /* Adjust width to fit text */
+  height: 24px; /* Set height to ensure equal size */
+  display: flex; /* Use flexbox to center content */
+  justify-content: center; /* Horizontally center text */
+  align-items: center; /* Vertically center text */
+  text-align: center;
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide any overflowing content */
+  text-overflow: ellipsis; /* Add ellipsis if text overflows */
 }
 
-.pain-points-indicator.green { background-color: var(--green-color); }
-.pain-points-indicator.amber { background-color: var(--amber-color); }
-.pain-points-indicator.red { background-color: var(--red-color); }
+.pain-point-0 { background-color: #007AFF; color: white; }
+.pain-point-1-2 { background-color: #FF9500; color: white; }
+.pain-point-3-plus { background-color: #FF3B30; color: white; }

@@ -36,3 +36,7 @@
   font-size: 0.8rem;
   font-weight: 500;
 }
+
+.pain-points-indicator.green { background-color: var(--green-color); }
+.pain-points-indicator.amber { background-color: var(--amber-color); }
+.pain-points-indicator.red { background-color: var(--red-color); }

@@ -1,0 +1,14 @@
+.key-improvements {
+    margin-bottom: 1rem;
+    cursor: pointer;
+  }
+  
+  .key-improvements h2 {
+    color: #007AFF;
+    font-size: 1.2rem;
+  }
+  
+  .key-improvements ul {
+    margin-top: 0.5rem;
+    padding-left: 1.5rem;
+  }
