@@ -22,15 +22,15 @@
 
 .logo-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .logo-image-left, .logo-image-right {
-  max-height: 60px;
+  max-height: 40px; /* Adjusted to reduce size */
   width: auto;
+  margin: 0 0.5rem;
 }
 
 .pass-key-content h2 {
