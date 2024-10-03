@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import Header from './components/Header';
 import SearchBar from './components/SearchBar';
 import ProcessCard from './components/ProcessCard';
@@ -9,19 +9,22 @@ import { financeProcesses } from './data/financeProcesses';
 import { procurementProcesses } from './data/procurementProcesses';
 import { salesProcesses } from './data/salesProcesses';
 import { motion, AnimatePresence } from 'framer-motion';
-// Remove the import for App.css
 
 function App() {
-  const allProcesses = { ...financeProcesses, ...procurementProcesses, ...salesProcesses };
+  // Use useMemo to memoize allProcesses
+  const allProcesses = useMemo(() => ({
+    ...financeProcesses,
+    ...procurementProcesses,
+    ...salesProcesses
+  }), []);
+
   const [selectedGroup, setSelectedGroup] = useState(null);
   const [selectedSubProcess, setSelectedSubProcess] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredProcesses, setFilteredProcesses] = useState(allProcesses);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  // Removed the block that checks localStorage for 'isAuthenticated'
-  // Now this hook is not necessary for authentication
-  useEffect(() => {}, []);
+  useEffect(() => {}, []); // Empty hook, not necessary anymore for auth
 
   useEffect(() => {
     if (searchTerm) {
@@ -62,7 +65,6 @@ function App() {
     }
   };
 
-  // If not authenticated, always show the passkey prompt
   if (!isAuthenticated) {
     return <PassKeyPrompt onPassKeySubmit={handlePassKeySubmit} />;
   }
