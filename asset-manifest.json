@@ -1,23 +1,16 @@
 {
   "files": {
-    "main.css": "/bursaerp/static/css/main.a49ff58c.chunk.css",
-    "main.js": "/bursaerp/static/js/main.51640821.chunk.js",
-    "main.js.map": "/bursaerp/static/js/main.51640821.chunk.js.map",
-    "runtime-main.js": "/bursaerp/static/js/runtime-main.4c8ad5eb.js",
-    "runtime-main.js.map": "/bursaerp/static/js/runtime-main.4c8ad5eb.js.map",
-    "static/js/2.66aa9374.chunk.js": "/bursaerp/static/js/2.66aa9374.chunk.js",
-    "static/js/2.66aa9374.chunk.js.map": "/bursaerp/static/js/2.66aa9374.chunk.js.map",
+    "main.css": "/bursaerp/static/css/main.5623aaec.css",
+    "main.js": "/bursaerp/static/js/main.0c4d308f.js",
+    "static/media/sap-logo.png": "/bursaerp/static/media/sap-logo.d66b50bb5898b6cf92b5.png",
+    "static/media/bursa-logo.png": "/bursaerp/static/media/bursa-logo.670c8cdbd4b1d8c30adc.png",
+    "static/media/abeam-logo.png": "/bursaerp/static/media/abeam-logo.181f10a5725f944ee73f.png",
     "index.html": "/bursaerp/index.html",
-    "static/css/main.a49ff58c.chunk.css.map": "/bursaerp/static/css/main.a49ff58c.chunk.css.map",
-    "static/js/2.66aa9374.chunk.js.LICENSE.txt": "/bursaerp/static/js/2.66aa9374.chunk.js.LICENSE.txt",
-    "static/media/abeam-logo.181f10a5.png": "/bursaerp/static/media/abeam-logo.181f10a5.png",
-    "static/media/bursa-logo.670c8cdb.png": "/bursaerp/static/media/bursa-logo.670c8cdb.png",
-    "static/media/sap-logo.d66b50bb.png": "/bursaerp/static/media/sap-logo.d66b50bb.png"
+    "main.5623aaec.css.map": "/bursaerp/static/css/main.5623aaec.css.map",
+    "main.0c4d308f.js.map": "/bursaerp/static/js/main.0c4d308f.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.4c8ad5eb.js",
-    "static/js/2.66aa9374.chunk.js",
-    "static/css/main.a49ff58c.chunk.css",
-    "static/js/main.51640821.chunk.js"
+    "static/css/main.5623aaec.css",
+    "static/js/main.0c4d308f.js"
   ]
 }
