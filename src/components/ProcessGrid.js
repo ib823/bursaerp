@@ -83,7 +83,7 @@ function ProcessGrid({ processes, onSelectProcess }) {
   const toolCards = [
     {
       id: 'enable-now',
-      title: 'SAP Enable Now',
+      title: 'Enable Now',
       description: 'Accelerate user adoption and streamline change management across all processes.',
       benefits: [
         'Faster user adoption and reduced training time',
@@ -113,7 +113,7 @@ function ProcessGrid({ processes, onSelectProcess }) {
     },
     {
       id: 'esg-reporting',
-      title: 'SAP S/4HANA for Sustainability Reporting & Compliance (ESG Reporting)',
+      title: 'Sustainability Reporting & Compliance (ESG Reporting)',
       description: 'Enable comprehensive sustainability governance and ESG reporting through SAP’s integrated tools.',
       benefits: [
         'Centralized reporting on carbon, water, and waste with SAP Sustainability Control Tower.',
