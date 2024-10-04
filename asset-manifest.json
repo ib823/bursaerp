@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/bursaerp/static/css/main.5623aaec.css",
-    "main.js": "/bursaerp/static/js/main.e42b32e8.js",
+    "main.js": "/bursaerp/static/js/main.9b409fbf.js",
     "static/media/sap-logo.png": "/bursaerp/static/media/sap-logo.d66b50bb5898b6cf92b5.png",
     "static/media/bursa-logo.png": "/bursaerp/static/media/bursa-logo.670c8cdbd4b1d8c30adc.png",
     "static/media/abeam-logo.png": "/bursaerp/static/media/abeam-logo.181f10a5725f944ee73f.png",
     "index.html": "/bursaerp/index.html",
     "main.5623aaec.css.map": "/bursaerp/static/css/main.5623aaec.css.map",
-    "main.e42b32e8.js.map": "/bursaerp/static/js/main.e42b32e8.js.map"
+    "main.9b409fbf.js.map": "/bursaerp/static/js/main.9b409fbf.js.map"
   },
   "entrypoints": [
     "static/css/main.5623aaec.css",
-    "static/js/main.e42b32e8.js"
+    "static/js/main.9b409fbf.js"
   ]
 }
