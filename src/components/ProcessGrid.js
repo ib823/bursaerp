@@ -107,28 +107,42 @@ function ProcessGrid({ processes, onSelectProcess }) {
         'Advanced forecasting and scenario planning',
       ],
       icon: '📊',
-      category: 'Analytics',
+      category: 'Enablement',
+      logo: SAPLogo,
+      provider: 'SAP'
+    },
+    {
+      id: 'esg-reporting',
+      title: 'SAP S/4HANA for Sustainability Reporting & Compliance (ESG Reporting)',
+      description: 'Enable comprehensive sustainability governance and ESG reporting through SAP’s integrated tools.',
+      benefits: [
+        'Centralized reporting on carbon, water, and waste with SAP Sustainability Control Tower.',
+        'Adhere to environmental regulations using SAP EHS for real-time compliance.',
+        'Future-proof governance with risk management and carbon analytics tools.',
+        'Real-time ESG insights and automated reporting with SAP Analytics Cloud.'
+      ],
+      icon: '🌱',
+      category: 'Enablement',
       logo: SAPLogo,
       provider: 'SAP'
     },
     {
       id: 's4hana-security',
-      title: 'Security for Financial Institutions',
-      subtitle: 'for Financial Institutions',
+      title: 'Best Security Standards for Financial Institutions',
       description: 'Comprehensive security features tailored for financial institutions like BURSA Malaysia.',
       benefits: [
         'Advanced Data Encryption & Privacy: Secure financial data with end-to-end encryption, ensuring compliance and protection from unauthorized access.',
-        'Identity & Access Management (IAM): Role-based access control, MFA, and SoD to prevent unauthorized access and reduce fraud risks. (Includes SAP Identity Management & Access Control)',
-        'Real-Time Threat Detection & Monitoring: Proactively detect and respond to threats using SAP Enterprise Threat Detection. (Optional, recommended add-on tool)',
-        'Automated Compliance with Financial Regulations: Ensure compliance with global/local regulations (e.g., GDPR, Basel III, Malaysian regulations) through automated audits and reporting.',
-        'Cloud Security Integration: Data residency controls and automated backups for hybrid or cloud deployments. (Optional for cloud or hybrid)',
-        'Regular Security Patches & Updates: Continuous protection through automated patches and regular system updates.',
-        'Data Masking & Privacy Controls: Protect sensitive information through data masking while maintaining usability. (Optional tool for enhanced privacy controls)'
+        'Identity & Access Management (IAM): Role-based access control, MFA, and SoD to prevent unauthorized access and reduce fraud risks.',
+        'Real-Time Threat Detection & Monitoring: Detect and respond to threats using SAP Enterprise Threat Detection (Optional add-on).',
+        'Automated Compliance with Financial Regulations: Ensure compliance with global/local regulations through automated audits and reporting.',
+        'Cloud Security Integration: Data residency controls and automated backups for hybrid or cloud deployments (Optional for cloud or hybrid).',
+        'Regular Security Patches & Updates: Continuous protection through automated patches and updates.',
+        'Data Masking & Privacy Controls: Protect sensitive information with data masking while maintaining usability (Optional tool for enhanced privacy).'
       ],
-      icon: '🛡️',
+      icon: '🔒',
       category: 'Security',
       logo: SAPLogo,
-      provider: 'SAP',
+      provider: 'SAP'
     },
     {
       id: 'abeam-einvoicing',
@@ -160,7 +174,7 @@ function ProcessGrid({ processes, onSelectProcess }) {
       icon: '📄',
       category: 'Compliance',
       logo: SAPLogo,
-      provider: 'SAP',
+      provider: 'SAP'
     },
   ];
 

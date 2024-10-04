@@ -61,8 +61,10 @@ const useStyles = makeStyles((theme) => ({
 function ToolCard({ tool }) {
   const classes = useStyles();
 
-  // Determine if the "Recommended" chip should be displayed based on the tool's category or ID
-  const showRecommendedChip = ['Enablement', 'Analytics'].includes(tool.category) || tool.id === 'abeam-einvoicing';
+  // Check if the tool object is valid before rendering
+  if (!tool || !tool.category) {
+    return null; // Return null to avoid rendering anything if tool is missing or undefined
+  }
 
   return (
     <Card className={classes.card}>
@@ -74,12 +76,13 @@ function ToolCard({ tool }) {
         <Typography variant="h6" className={classes.title}>
           {tool.title}
         </Typography>
-
-        {/* Conditionally render the "Recommended" chip based on category or specific tool ID */}
-        {showRecommendedChip && (
+        {/* Conditionally render the "Recommended" or "Optional" chip */}
+        {(tool.id === 'enable-now' || tool.id === 'abeam-einvoicing' || tool.id === 'analytics-cloud') && (
           <Chip label="Recommended" color="primary" variant="outlined" className={classes.chip} />
         )}
-
+        {tool.id === 'esg-reporting' && (
+          <Chip label="Optional" color="default" variant="outlined" className={classes.chip} />
+        )}
         <Typography variant="body2" className={classes.description}>
           {tool.description}
         </Typography>
