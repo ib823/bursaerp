@@ -128,7 +128,7 @@ function ProcessGrid({ processes, onSelectProcess }) {
     },
     {
       id: 's4hana-security',
-      title: 'Best Security Standards for Financial Institutions',
+      title: 'Industry-Recognized Security Standards for Financial Institutions',
       description: 'Comprehensive security features tailored for financial institutions like BURSA Malaysia.',
       benefits: [
         'Advanced Data Encryption & Privacy: Secure financial data with end-to-end encryption, ensuring compliance and protection from unauthorized access.',
@@ -139,7 +139,7 @@ function ProcessGrid({ processes, onSelectProcess }) {
         'Regular Security Patches & Updates: Continuous protection through automated patches and updates.',
         'Data Masking & Privacy Controls: Protect sensitive information with data masking while maintaining usability (Optional tool for enhanced privacy).'
       ],
-      icon: '🔒',
+      icon: '🛡️',
       category: 'Security',
       logo: SAPLogo,
       provider: 'SAP'
@@ -171,7 +171,7 @@ function ProcessGrid({ processes, onSelectProcess }) {
         'Simplified audit processes',
         'Part of SAP BTP cloud for scalability and flexibility'
       ],
-      icon: '📄',
+      icon: '⚖️',
       category: 'Compliance',
       logo: SAPLogo,
       provider: 'SAP'
