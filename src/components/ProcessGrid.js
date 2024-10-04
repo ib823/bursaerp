@@ -13,26 +13,39 @@ const useStyles = makeStyles((theme) => ({
   gridContainer: {
     marginTop: theme.spacing(3),
   },
-  gridItem: {
-    display: 'flex',
-  },
-  // Custom layout for Security & Compliance section
   securityComplianceContainer: {
-    display: 'flex',  // Use flexbox
-    flexWrap: 'wrap',  // Allow wrapping
-    gap: '20px',       // Add gap between items
-    justifyContent: 'space-between', // Spread items
+    display: 'grid',
+    gridTemplateColumns: '1fr',
+    gap: '20px',
+    [theme.breakpoints.up('md')]: {
+      gridTemplateColumns: '1fr 1fr',
+    },
   },
   fullWidthCard: {
-    flexBasis: '100%',  // Make SAP S/4HANA Enhanced Security span the full width
+    gridColumn: '1 / -1',
+    backgroundColor: '#f0f8ff',  // Light blue background for distinction
+    border: '2px solid #007AFF',  // Keep only the outer blue border
+    boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.1)',  // Subtle shadow
+    borderRadius: '8px',
+    padding: theme.spacing(2),
   },
-  equalHeightCard: {
+  importantTitle: {
+    color: '#007AFF',  // Bursa blue accent for the title
+    fontSize: '1.5rem',  // Make the title larger
+    fontWeight: 'bold',  // Emphasize the title
     display: 'flex',
-    flexDirection: 'column',
-    flexGrow: 1,        // Allow the card to grow and take equal height
+    alignItems: 'center',
+  },
+  iconStyle: {
+    marginRight: theme.spacing(1),
   },
   cardContent: {
-    flexGrow: 1,  // Ensure content inside the card grows to fill available space
+    display: 'flex',
+    flexDirection: 'column',
+    flexGrow: 1,
+  },
+  toolCardWithoutBorder: {
+    border: 'none',  // Remove the inner dashed border for "SAP S/4HANA Enhanced Security"
   },
 }));
 
@@ -100,7 +113,7 @@ function ProcessGrid({ processes, onSelectProcess }) {
     },
     {
       id: 's4hana-security',
-      title: 'SAP S/4HANA Enhanced Security',
+      title: 'Security for Financial Institutions',
       subtitle: 'for Financial Institutions',
       description: 'Comprehensive security features tailored for financial institutions like BURSA Malaysia.',
       benefits: [
@@ -112,7 +125,7 @@ function ProcessGrid({ processes, onSelectProcess }) {
         'Regular Security Patches & Updates: Continuous protection through automated patches and regular system updates.',
         'Data Masking & Privacy Controls: Protect sensitive information through data masking while maintaining usability. (Optional tool for enhanced privacy controls)'
       ],
-      icon: '🔒',
+      icon: '🛡️',
       category: 'Security',
       logo: SAPLogo,
       provider: 'SAP',
@@ -172,14 +185,19 @@ function ProcessGrid({ processes, onSelectProcess }) {
             ))
         ) : activeCategory === 'Security & Compliance' ? (
           <div className={classes.securityComplianceContainer}>
-            <div className={`${classes.gridItem} ${classes.equalHeightCard}`}>
+            <div className={classes.equalHeightCard}>
               <ToolCard tool={toolCards.find(tool => tool.id === 'abeam-einvoicing')} />
             </div>
-            <div className={`${classes.gridItem} ${classes.equalHeightCard}`}>
+            <div className={classes.equalHeightCard}>
               <ToolCard tool={toolCards.find(tool => tool.id === 'document-compliance')} />
             </div>
-            <div className={`${classes.gridItem} ${classes.fullWidthCard}`}>
-              <ToolCard tool={toolCards.find(tool => tool.id === 's4hana-security')} />
+            <div className={classes.fullWidthCard}>
+              <div className={classes.importantTitle}>
+                <span className={classes.iconStyle}>🔒</span>
+                SAP S/4HANA Enhanced Security
+              </div>
+              {/* Removed the redundant inner title and border */}
+              <ToolCard tool={toolCards.find(tool => tool.id === 's4hana-security')} className={classes.toolCardWithoutBorder} />
             </div>
           </div>
         ) : (
