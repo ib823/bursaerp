@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardContent, Typography, Chip, List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
+import { Card, CardContent, Typography, Chip, List, ListItem, ListItemIcon, ListItemText, Box } from '@material-ui/core';
 import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -20,10 +20,19 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
   },
+  header: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: theme.spacing(2),
+  },
   icon: {
     fontSize: '2.5rem',
-    marginBottom: theme.spacing(2),
     color: theme.palette.primary.main,
+  },
+  logo: {
+    height: '30px',
+    objectFit: 'contain',
   },
   title: {
     marginBottom: theme.spacing(1),
@@ -52,14 +61,25 @@ const useStyles = makeStyles((theme) => ({
 function ToolCard({ tool }) {
   const classes = useStyles();
 
+  // Determine if the "Recommended" chip should be displayed based on the tool's category or ID
+  const showRecommendedChip = ['Enablement', 'Analytics'].includes(tool.category) || tool.id === 'abeam-einvoicing';
+
   return (
     <Card className={classes.card}>
       <CardContent className={classes.content}>
-        <div className={classes.icon}>{tool.icon}</div>
+        <Box className={classes.header}>
+          <div className={classes.icon}>{tool.icon}</div>
+          <img src={tool.logo} alt={`${tool.provider} logo`} className={classes.logo} />
+        </Box>
         <Typography variant="h6" className={classes.title}>
           {tool.title}
         </Typography>
-        <Chip label="Optional Tool" color="primary" variant="outlined" className={classes.chip} />
+
+        {/* Conditionally render the "Recommended" chip based on category or specific tool ID */}
+        {showRecommendedChip && (
+          <Chip label="Recommended" color="primary" variant="outlined" className={classes.chip} />
+        )}
+
         <Typography variant="body2" className={classes.description}>
           {tool.description}
         </Typography>

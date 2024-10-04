@@ -1,24 +1,63 @@
-.loading-spinner {
+.loading-spinner-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-color: transparent; /* Optional, but can add styling */
+  animation: fadeIn 0.3s ease-in-out;
 }
 
 .spinner {
-  border: 4px solid rgba(0, 0, 0, 0.1);
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border-left-color: #007AFF;
-  animation: spin 1s ease infinite;
+  width: 60px;
+  height: 60px;
 }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
+.spinner-svg {
+  animation: rotate 2s linear infinite;
+}
+
+.spinner-path {
+  stroke-dasharray: 150, 200;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+  animation: dash 1.5s ease-in-out infinite;
+}
+
+.loading-text {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #555;
+  opacity: 0.85;
+  text-align: center;
+}
+
+@keyframes rotate {
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

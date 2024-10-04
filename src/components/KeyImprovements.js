@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { makeStyles } from '@material-ui/core/styles';
-import { Typography, List, ListItem, ListItemText, Collapse } from '@material-ui/core';
+import { Typography, List, ListItem, ListItemText } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const useStyles = makeStyles((theme) => ({

@@ -9,9 +9,8 @@ import { procurementProcesses } from './data/procurementProcesses';
 import { salesProcesses } from './data/salesProcesses';
 import { ThemeProvider, createTheme } from '@material-ui/core/styles';
 import { CssBaseline, Container } from '@material-ui/core';
+import LoadingSpinner from './components/LoadingSpinner'; // Use the updated spinner
 import './styles/App.css';
-
-const LoadingSpinner = () => <div className="loading-spinner">Loading...</div>;
 
 function App() {
   const [selectedProcess, setSelectedProcess] = useState(null);
@@ -65,7 +64,7 @@ function App() {
   }
 
   if (isLoading) {
-    return <LoadingSpinner />;
+    return <LoadingSpinner />; // Enhanced Spinner
   }
 
   return (
